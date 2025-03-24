@@ -3,7 +3,7 @@
 set -e
 
 echo "Criando o cluster com base no cluster-config.yaml..."
-kubectl apply -f k8s/cluster-config.yaml
+kind create cluster --name fastfood --config k8s/cluster-config.yaml
 echo "Cluster criado com sucesso!"
 
 sleep 5
