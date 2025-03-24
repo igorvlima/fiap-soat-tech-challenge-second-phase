@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tech-challenge-app
+  labels:
+    app: tech-challenge-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: tech-challenge-app
+  template:
+    metadata:
+      labels:
+        app: tech-challenge-app
+    spec:
+      containers:
+        - name: tech-challenge-app
+          image: igorvlima/techchallenge:1.0.1
+          ports:
+            - containerPort: 8080
+          resources:
+            requests:
+              memory: "512Mi"
+              cpu: "250m"
+            limits:
+              memory: "1024Mi"
+              cpu: "500m"
+          env:
+            - name: SPRING_DATASOURCE_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: tech-challenge-config
+                  key: SPRING_DATASOURCE_URL
+            - name: SPRING_DATASOURCE_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: tech-challenge-secrets
+                  key: SPRING_DATASOURCE_USERNAME
+            - name: SPRING_DATASOURCE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: tech-challenge-secrets
+                  key: SPRING_DATASOURCE_PASSWORD

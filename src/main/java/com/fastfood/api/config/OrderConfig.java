@@ -2,10 +2,7 @@ package com.fastfood.api.config;
 
 import com.fastfood.api.application.gateways.OrderGateway;
 import com.fastfood.api.application.gateways.ProductGateway;
-import com.fastfood.api.application.usecases.order.CreateOrderImpl;
-import com.fastfood.api.application.usecases.order.FindOrderByIdImpl;
-import com.fastfood.api.application.usecases.order.FindOrderByStatusImpl;
-import com.fastfood.api.application.usecases.order.UpdateOrderStatusImpl;
+import com.fastfood.api.application.usecases.order.*;
 import com.fastfood.api.infrastructure.controller.order.OrderDTOMapper;
 import com.fastfood.api.infrastructure.gateways.order.OrderEntityMapper;
 import com.fastfood.api.infrastructure.gateways.order.OrderRespositoryGateway;
@@ -35,6 +32,21 @@ public class OrderConfig {
     @Bean
     CreateOrderImpl createOrderImpl(OrderGateway orderGateway, ProductGateway productGateway) {
         return new CreateOrderImpl(orderGateway, productGateway);
+    }
+
+    @Bean
+    GetOrderPaymentStatusImpl getOrderPaymentStatusImpl(OrderGateway orderGateway) {
+        return new GetOrderPaymentStatusImpl(orderGateway);
+    }
+
+    @Bean
+    UpdateOrderPaymentImpl updateOrderPaymentImpl(OrderGateway orderGateway) {
+        return new UpdateOrderPaymentImpl(orderGateway);
+    }
+
+    @Bean
+    FindAllOrdersImpl findAllOrdersImpl(OrderGateway orderGateway) {
+        return new FindAllOrdersImpl(orderGateway);
     }
 
     @Bean

@@ -14,6 +14,8 @@ public class OrderDTOMapper {
                 order.getTotal(),
                 order.getStatus(),
                 order.getWaitingTimeInMinutes(),
+                order.getPaymentStatus(),
+                order.getPaymentType(),
                 order.getItems().stream()
                         .map(item -> new OrderItemResponse(item.getId(), item.getOrderId(), item.getProductId(), item.getQuantity(), item.getCreatedAt()))
                         .collect(Collectors.toList()),
@@ -31,6 +33,7 @@ public class OrderDTOMapper {
         return new Order(
                 request.customerId(),
                 request.waitingTimeInMinutes(),
+                request.paymentType(),
                 request.items().stream()
                         .map(item -> new OrderItem(item.productId(), item.quantity()))
                         .collect(Collectors.toList())

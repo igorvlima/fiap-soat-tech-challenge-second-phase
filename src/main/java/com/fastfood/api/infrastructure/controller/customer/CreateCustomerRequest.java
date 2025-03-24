@@ -1,4 +1,7 @@
 package com.fastfood.api.infrastructure.controller.customer;
 
-public record CreateCustomerRequest(String cpf, String name, String email) {
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+
+public record CreateCustomerRequest(@NotNull @NotBlank String cpf, @NotNull @NotBlank String name, @NotNull @NotBlank String email) {
 }

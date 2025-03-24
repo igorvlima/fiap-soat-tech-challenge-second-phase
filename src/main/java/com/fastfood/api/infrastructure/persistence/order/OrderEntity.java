@@ -1,5 +1,7 @@
 package com.fastfood.api.infrastructure.persistence.order;
 
+import com.fastfood.api.domain.OrderPaymentStatus;
+import com.fastfood.api.domain.OrderPaymentType;
 import com.fastfood.api.domain.OrderStatus;
 import com.fastfood.api.domain.entity.order.Order;
 import jakarta.persistence.*;
@@ -27,12 +29,18 @@ public class OrderEntity {
     @Enumerated(EnumType.STRING)
     private OrderStatus status;
     private Long waitingTimeInMinutes;
+    @Enumerated(EnumType.STRING)
+    private OrderPaymentType paymentType;
+    @Enumerated(EnumType.STRING)
+    private OrderPaymentStatus paymentStatus;
     private LocalDateTime createdAt;
 
     public OrderEntity(Order order) {
         this.customerId = order.getCustomerId();
         this.total = order.getTotal();
         this.status = order.getStatus();
+        this.paymentStatus = order.getPaymentStatus();
+        this.paymentType = order.getPaymentType();
         this.waitingTimeInMinutes = order.getWaitingTimeInMinutes();
         this.createdAt = order.getCreatedAt();
     }

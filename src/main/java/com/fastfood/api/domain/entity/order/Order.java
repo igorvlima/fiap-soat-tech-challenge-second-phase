@@ -1,5 +1,7 @@
 package com.fastfood.api.domain.entity.order;
 
+import com.fastfood.api.domain.OrderPaymentStatus;
+import com.fastfood.api.domain.OrderPaymentType;
 import com.fastfood.api.domain.OrderStatus;
 
 import java.math.BigDecimal;
@@ -11,24 +13,30 @@ public class Order {
     private Long customerId;
     private BigDecimal total;
     private OrderStatus status;
+    private OrderPaymentStatus paymentStatus;
+    private OrderPaymentType paymentType;
     private Long waitingTimeInMinutes;
     private List<OrderItem> items;
     private LocalDateTime createdAt;
 
     public Order() {
     }
-    public Order(Long id, Long customerId, BigDecimal total, OrderStatus status, Long waitingTimeInMinutes, List<OrderItem> items, LocalDateTime createdAt) {
+    public Order(Long id, Long customerId, BigDecimal total, OrderStatus status, Long waitingTimeInMinutes, List<OrderItem> items,
+                 OrderPaymentStatus orderPaymentStatus, OrderPaymentType paymentType, LocalDateTime createdAt) {
         this.id = id;
         this.customerId = customerId;
         this.total = total;
         this.status = status;
+        this.paymentStatus = orderPaymentStatus;
+        this.paymentType = paymentType;
         this.waitingTimeInMinutes = waitingTimeInMinutes;
         this.items = items;
         this.createdAt = createdAt;
     }
 
-    public Order(Long customerId, Long waitingTimeInMinutes, List<OrderItem> items){
+    public Order(Long customerId, Long waitingTimeInMinutes, OrderPaymentType paymentType, List<OrderItem> items){
         this.customerId = customerId;
+        this.paymentType = paymentType;
         this.waitingTimeInMinutes = waitingTimeInMinutes;
         this.items = items;
     }
@@ -64,6 +72,14 @@ public class Order {
     public void setStatus(OrderStatus status) {
         this.status = status;
     }
+
+    public OrderPaymentStatus getPaymentStatus() {return paymentStatus;}
+
+    public void setPaymentStatus(OrderPaymentStatus paymentStatus) {this.paymentStatus = paymentStatus;}
+
+    public OrderPaymentType getPaymentType() {return paymentType;}
+
+    public void setPaymentType(OrderPaymentType paymentType) {this.paymentType = paymentType;}
 
     public Long getWaitingTimeInMinutes() {
         return waitingTimeInMinutes;

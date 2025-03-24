@@ -1,5 +1,5 @@
 package com.fastfood.api.domain;
 
 public enum OrderStatus {
-    RECEBIDO, PREPARACAO, PRONTO, FINALIZADO
+    AGUARDANDO_PAGAMENTO, RECEBIDO, PREPARACAO, PRONTO, FINALIZADO, CANCELADO
 }

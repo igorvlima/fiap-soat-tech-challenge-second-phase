@@ -40,7 +40,9 @@ CREATE TABLE "order" (
                          id BIGINT DEFAULT nextval('order_id_seq') PRIMARY KEY,
                          customer_id BIGINT,
                          total NUMERIC(19, 2) NOT NULL,
-                         status VARCHAR(255) NOT NULL,
+                         status VARCHAR(30) NOT NULL,
+                         payment_type VARCHAR(30) NOT NULL,
+                         payment_status VARCHAR(30) NOT NULL,
                          waiting_time_in_minutes BIGINT,
                          created_at TIMESTAMP NOT NULL
 );

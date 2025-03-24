@@ -2,10 +2,7 @@ package com.fastfood.api.infrastructure.persistence.product;
 
 import com.fastfood.api.domain.entity.product.Product;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -14,6 +11,7 @@ import java.time.LocalDateTime;
 @Entity
 @Getter
 @Setter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @SequenceGenerator(name = "product_seq_gen", sequenceName = "product_id_seq", allocationSize = 1)
