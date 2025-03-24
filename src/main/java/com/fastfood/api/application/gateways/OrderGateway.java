@@ -20,4 +20,5 @@ public interface OrderGateway {
     void updateOrderPayment(OrderPaymentStatus paymentStatus, Long orderId);
     OrderPaymentStatus getOrderPaymentStatus(Long orderId);
     int getOrderStatusPriority(OrderStatus status);
+    String generatePaymentQrCode();
 }

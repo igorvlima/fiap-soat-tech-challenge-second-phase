@@ -16,6 +16,7 @@ public class OrderEntityMapper {
         orderEntity.setStatus(order.getStatus());
         orderEntity.setPaymentStatus(order.getPaymentStatus());
         orderEntity.setPaymentType(order.getPaymentType());
+        orderEntity.setPaymentQrCode(order.getPaymentQrCode());
         orderEntity.setWaitingTimeInMinutes(order.getWaitingTimeInMinutes());
         orderEntity.setCreatedAt(order.getCreatedAt());
         return orderEntity;
@@ -31,6 +32,7 @@ public class OrderEntityMapper {
         order.setStatus(orderEntity.getStatus());
         order.setPaymentStatus(orderEntity.getPaymentStatus());
         order.setPaymentType(orderEntity.getPaymentType());
+        order.setPaymentQrCode(orderEntity.getPaymentQrCode());
         order.setWaitingTimeInMinutes(orderEntity.getWaitingTimeInMinutes());
         order.setCreatedAt(orderEntity.getCreatedAt());
 

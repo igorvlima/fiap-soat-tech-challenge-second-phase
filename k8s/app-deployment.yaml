@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: tech-challenge-app
-          image: igorvlima/techchallenge:1.0.2
+          image: igorvlima/techchallenge:1.0.3
           ports:
             - containerPort: 8080
           resources:

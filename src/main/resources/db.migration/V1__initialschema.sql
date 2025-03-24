@@ -43,6 +43,7 @@ CREATE TABLE "order" (
                          status VARCHAR(30) NOT NULL,
                          payment_type VARCHAR(30) NOT NULL,
                          payment_status VARCHAR(30) NOT NULL,
+                         payment_qr_code VARCHAR(255) NOT NULL,
                          waiting_time_in_minutes BIGINT,
                          created_at TIMESTAMP NOT NULL
 );

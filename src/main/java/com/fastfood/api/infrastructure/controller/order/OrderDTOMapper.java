@@ -16,6 +16,7 @@ public class OrderDTOMapper {
                 order.getWaitingTimeInMinutes(),
                 order.getPaymentStatus(),
                 order.getPaymentType(),
+                order.getPaymentQrCode(),
                 order.getItems().stream()
                         .map(item -> new OrderItemResponse(item.getId(), item.getOrderId(), item.getProductId(), item.getQuantity(), item.getCreatedAt()))
                         .collect(Collectors.toList()),

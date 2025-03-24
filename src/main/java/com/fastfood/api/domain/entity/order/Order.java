@@ -15,6 +15,7 @@ public class Order {
     private OrderStatus status;
     private OrderPaymentStatus paymentStatus;
     private OrderPaymentType paymentType;
+    private String paymentQrCode;
     private Long waitingTimeInMinutes;
     private List<OrderItem> items;
     private LocalDateTime createdAt;
@@ -22,13 +23,14 @@ public class Order {
     public Order() {
     }
     public Order(Long id, Long customerId, BigDecimal total, OrderStatus status, Long waitingTimeInMinutes, List<OrderItem> items,
-                 OrderPaymentStatus orderPaymentStatus, OrderPaymentType paymentType, LocalDateTime createdAt) {
+                 OrderPaymentStatus orderPaymentStatus, OrderPaymentType paymentType, String paymentQrCode, LocalDateTime createdAt) {
         this.id = id;
         this.customerId = customerId;
         this.total = total;
         this.status = status;
         this.paymentStatus = orderPaymentStatus;
         this.paymentType = paymentType;
+        this.paymentQrCode = paymentQrCode;
         this.waitingTimeInMinutes = waitingTimeInMinutes;
         this.items = items;
         this.createdAt = createdAt;
@@ -80,6 +82,14 @@ public class Order {
     public OrderPaymentType getPaymentType() {return paymentType;}
 
     public void setPaymentType(OrderPaymentType paymentType) {this.paymentType = paymentType;}
+
+    public String getPaymentQrCode() {
+        return paymentQrCode;
+    }
+
+    public void setPaymentQrCode(String paymentQrCode) {
+        this.paymentQrCode = paymentQrCode;
+    }
 
     public Long getWaitingTimeInMinutes() {
         return waitingTimeInMinutes;

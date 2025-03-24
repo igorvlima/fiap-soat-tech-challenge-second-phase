@@ -33,6 +33,7 @@ public class OrderEntity {
     private OrderPaymentType paymentType;
     @Enumerated(EnumType.STRING)
     private OrderPaymentStatus paymentStatus;
+    private String paymentQrCode;
     private LocalDateTime createdAt;
 
     public OrderEntity(Order order) {

@@ -33,6 +33,7 @@ public class CreateOrderImpl implements CreateOrderUseCase{
                 .toList();
 
         order.setTotal(orderGateway.calculateTotalValue(products, order.getItems()));
+        order.setPaymentQrCode(orderGateway.generatePaymentQrCode());
         order.setCreatedAt(LocalDateTime.now());
         order.getItems().forEach(item -> item.setCreatedAt(LocalDateTime.now()));
         order.setStatus(OrderStatus.AGUARDANDO_PAGAMENTO);

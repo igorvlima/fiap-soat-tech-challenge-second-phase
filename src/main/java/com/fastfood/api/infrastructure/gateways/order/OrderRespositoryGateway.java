@@ -149,4 +149,10 @@ public class OrderRespositoryGateway implements OrderGateway {
             default -> Integer.MAX_VALUE;
         };
     }
+
+    @Override
+    public String generatePaymentQrCode() {
+       //TODO: Implement payment integrator with mercado pago
+        return "qrCodeData-mercado-pago-fastfood-pos-tech-fiap";
+    }
 }

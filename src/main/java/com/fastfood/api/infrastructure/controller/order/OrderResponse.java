@@ -17,6 +17,7 @@ public record OrderResponse(
 
         OrderPaymentStatus paymentStatus,
         OrderPaymentType paymentType,
+        String paymentQrCode,
         List<OrderItemResponse> items,
         LocalDateTime createdAt
 ) {
