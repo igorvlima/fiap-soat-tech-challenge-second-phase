@@ -112,14 +112,14 @@ Primeiro, faça uma requisição ao endpoint `/product` para cadastrar um produt
 
 ```json
 {
-  "name": "string",
-  "price": 0,
-  "description": "string",
+  "name": "x salada",
+  "price": 10,
+  "description": "Delicioso lanche com hambúrguer, alface e tomate",
   "category": "LANCHE",
   "active": true,
   "images": [
     {
-      "url": "string"
+      "url": "x-salada.png"
     }
   ]
 }
@@ -134,12 +134,12 @@ Com o `id` do produto em mãos, faça uma requisição ao endpoint `/order` util
 ```json
 {
   "customerId": 0,
-  "waitingTimeInMinutes": 0,
+  "waitingTimeInMinutes": 60,
   "paymentType": "PIX",
   "items": [
     {
-      "productId": 0,
-      "quantity": 0
+      "productId": 1,
+      "quantity": 2
     }
   ]
 }
@@ -154,6 +154,22 @@ POST /order/{orderId}/payment/APPROVED
 ```
 
 Dessa forma, o pedido ficará com o status de RECEBIDO, indicando que o pedido e o pagamento foram registrados com sucesso e o pedido está pronto para ser processado pela equipe da cozinha.
+
+4. Verificar o status de pagamento de um pedido
+
+Para verificar o status de pagamento de um pedido, faça a seguinte requisição:
+
+```bash
+GET /order/{orderId}/payment
+```
+
+5. Listar todos os pedidos
+
+Para listar todos os pedidos que estão com os status de RECEBIDO, EM PREPARAÇÃO e PRONTO, faça a seguinte requisição:
+
+```bash
+GET /order
+```
 
 ## Documentação/Swagger
 
