@@ -62,6 +62,7 @@ interagir com um atendente.
 - **[Gradle 8.11.1+](https://docs.gradle.org/current/userguide/userguide.html)**: Documentação do Gradle.
 - **[Docker](https://docs.docker.com/?_gl=1*v1gqy4*_gcl_au*MTM4MjU0MTI3Ni4xNzM3NDg2MzY2*_ga*MzMxMDkxMTA1LjE3Mzc0MTQ5OTI.*_ga_XJWPQMJYHQ*MTczNzQ4NjI1MC4zLjEuMTczNzQ4NjM2Ni41OS4wLjA.)**: Documentação do Docker.
 - **[Docker Compose](https://docs.docker.com/compose/)**: Documentação do Docker Compose.
+- **[Kubernetes](https://kubernetes.io/docs/home/)**: Documentação do Kubernetes.
 
 ## Execução
 
@@ -133,7 +134,7 @@ Com o `id` do produto em mãos, faça uma requisição ao endpoint `/order` util
 {
   "customerId": 0,
   "waitingTimeInMinutes": 0,
-  "paymentType"
+  "paymentType": "PIX",
   "items": [
     {
       "productId": 0,
