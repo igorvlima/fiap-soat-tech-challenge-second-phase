@@ -90,10 +90,7 @@ Com isso a aplicação criará o container e iniciará corretamente.
 
 ![Imagem criação container](./assets/k8s-deploy.png)
 
-![Imagem comando kubectl](./assets/kubectl.png)
-
 ![Imagem comando kubectl-f](./assets/kubectl-f.png)
-
 
 
 5. A aplicação estará disponível no endereço: http://localhost:30000
