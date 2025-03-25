@@ -21,9 +21,17 @@ Este código se trata de um sistema monolítico encarregado de gerenciar a cria�
 
 ## Arquitetura
 
-O projeto segue a Arquitetura Limpa, permitindo maior flexibilidade e facilidade de manutenção.
+O projeto segue a estrutura da Arquitetura Limpa, permitindo maior flexibilidade e facilidade de manutenção.
 
-![Imagem da arquitetura hexagonal](./assets/hex-ports-adapters.svg)
+![Imagem da arquitetura hexagonal](./assets/clean-arch.png)
+
+Além disso, dada a arquitetura problema:
+
+![Imagem da arquitetura hexagonal](./assets/arch-problem.png)
+
+foi elaboarada a seguinte arquitetura com Kubernetes:
+
+![Imagem da arquitetura hexagonal](./assets/k8s.png)
 
 ## Problema
 
@@ -78,7 +86,7 @@ chmod +x deploy.sh
 ```bash
 ./k8s-deploy.sh
 ```
-Com isso a aplicação criará o container e iniciará toda configurada.
+Com isso a aplicação criará o container e iniciará corretamente.
 
 --imagem aqui
 
