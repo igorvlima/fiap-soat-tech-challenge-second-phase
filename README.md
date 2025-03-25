@@ -150,7 +150,7 @@ Com o `id` do produto em mãos, faça uma requisição ao endpoint `/order` util
 Com o id do pedido criado, vamos simular um pagamento. Faça uma requisição no endpoint: 
 
 ```bash
-/order/{orderId}/payment/APPROVED
+POST /order/{orderId}/payment/APPROVED
 ```
 
 Dessa forma, o pedido ficará com o status de RECEBIDO, indicando que o pedido e o pagamento foram registrados com sucesso e o pedido está pronto para ser processado pela equipe da cozinha.
