@@ -90,6 +90,8 @@ Com isso a aplicação criará o container e iniciará corretamente.
 
 ![Imagem criação container](./assets/k8s-deploy.png)
 
+![Imagem comando kubectl](./assets/kubectl.png)
+
 ![Imagem comando kubectl-f](./assets/kubectl-f.png)
 
 
