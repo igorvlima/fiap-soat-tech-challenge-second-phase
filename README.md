@@ -27,11 +27,11 @@ O projeto segue a estrutura da Arquitetura Limpa, permitindo maior flexibilidade
 
 Além disso, dada a arquitetura problema:
 
-![Imagem da arquitetura hexagonal](./assets/arch-problem.png)
+![Imagem da arquitetura problema](./assets/arch-problem.png)
 
 foi elaboarada a seguinte arquitetura com Kubernetes:
 
-![Imagem da arquitetura hexagonal](./assets/k8s.png)
+![Imagem da arquitetura com k8s](./assets/k8s.png)
 
 ## Problema
 
@@ -88,7 +88,13 @@ chmod +x deploy.sh
 ```
 Com isso a aplicação criará o container e iniciará corretamente.
 
---imagem aqui
+![Imagem criação container](./assets/k8s-deploy.png)
+
+![Imagem comando kubectl](./assets/kubectl.png)
+
+![Imagem comando kubectl-f](./assets/kubectl-f.png)
+
+
 
 5. A aplicação estará disponível no endereço: http://localhost:30000
 
