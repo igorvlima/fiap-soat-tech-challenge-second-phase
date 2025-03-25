@@ -116,6 +116,7 @@ Primeiro, faça uma requisição ao endpoint `/product` para cadastrar um produt
   "price": 0,
   "description": "string",
   "category": "LANCHE",
+  "active": true,
   "images": [
     {
       "url": "string"
