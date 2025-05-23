@@ -23,15 +23,15 @@ Este código se trata de um sistema monolítico encarregado de gerenciar a cria�
 
 O projeto segue a estrutura da Arquitetura Limpa, permitindo maior flexibilidade e facilidade de manutenção.
 
-![Imagem da arquitetura hexagonal](./assets/clean-arch.png)
+![Imagem da arquitetura hexagonal](.github/assets/clean-arch.png)
 
 Além disso, dada a arquitetura problema:
 
-![Imagem da arquitetura problema](./assets/arch-problem.png)
+![Imagem da arquitetura problema](.github/assets/arch-problem.png)
 
 foi elaboarada a seguinte arquitetura com Kubernetes:
 
-![Imagem da arquitetura com k8s](./assets/k8s.png)
+![Imagem da arquitetura com k8s](.github/assets/k8s.png)
 
 ## Problema
 
@@ -89,11 +89,11 @@ chmod +x deploy.sh
 ```
 Com isso a aplicação criará o container e iniciará corretamente.
 
-![Imagem criação container](./assets/k8s-deploy.png)
+![Imagem criação container](.github/assets/k8s-deploy.png)
 
-![Imagem comando kubectl](./assets/kubectl.png)
+![Imagem comando kubectl](.github/assets/kubectl.png)
 
-![Imagem comando kubectl-f](./assets/kubectl-f.png)
+![Imagem comando kubectl-f](.github/assets/kubectl-f.png)
 
 
 5. A aplicação estará disponível no endereço: http://localhost:30000
