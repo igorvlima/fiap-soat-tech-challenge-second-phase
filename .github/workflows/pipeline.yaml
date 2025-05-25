@@ -60,15 +60,24 @@ jobs:
           ECR_REPOSITORY: ${{ secrets.REPO_NAME }}
           IMAGE_TAG: ${{ steps.commit.outputs.short }}
           RDS_HOSTNAME: ${{ secrets.RDS_HOSTNAME }}
+          DB_USERNAME: ${{ secrets.DB_USERNAME }}
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
         run: |
           echo "Atualiza imagem no YAML"
           sed -i.bak "s|image: .*|image: $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG|g" k8s/app-deployment.yaml
-          
-          echo "Atualiza ConfigMap com a nova URL do banco"
+
+          echo "Cria/atualiza ConfigMap com a URL do banco"
           kubectl create configmap tech-challenge-config \
             --from-literal=SPRING_DATASOURCE_URL=jdbc:postgresql://$RDS_HOSTNAME:5432/postgres \
+            --dry-run=client -o yaml | kubectl apply -f -
+
+          echo "Cria/atualiza Secret com usuário e senha do banco"
+          kubectl create secret generic tech-challenge-secret \
+            --from-literal=SPRING_DATASOURCE_USERNAME=$DB_USERNAME \
+            --from-literal=SPRING_DATASOURCE_PASSWORD=$DB_PASSWORD \
             --dry-run=client -o yaml | kubectl apply -f -
 
           echo "Aplica deployment e service"
           kubectl apply -f k8s/app-deployment.yaml
           kubectl apply -f k8s/app-service.yaml
+      
