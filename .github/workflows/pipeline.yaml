@@ -72,7 +72,7 @@ jobs:
             --dry-run=client -o yaml | kubectl apply -f -
 
           echo "Cria/atualiza Secret com usuário e senha do banco"
-          kubectl create secret generic tech-challenge-secret \
+          kubectl create secret generic tech-challenge-secrets \
             --from-literal=SPRING_DATASOURCE_USERNAME=$DB_USERNAME \
             --from-literal=SPRING_DATASOURCE_PASSWORD=$DB_PASSWORD \
             --dry-run=client -o yaml | kubectl apply -f -
