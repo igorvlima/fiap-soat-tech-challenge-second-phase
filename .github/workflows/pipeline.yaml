@@ -5,7 +5,7 @@ on:
     branches: [ "main" ]
 
 env:
-  EKS_CLUSTER_NAME: eks-cluster
+  EKS_CLUSTER_NAME: ${{ secrets.EKS_CLUSTER_NAME }}
   AWS_REGION: us-east-1
 
 jobs:
